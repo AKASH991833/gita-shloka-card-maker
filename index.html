@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gita Shloka Card Maker - make shareable shloka images</title>
+<meta name="description" content="Free Gita Shloka Card Maker. Pick any of the 700 Bhagavad Gita shlokas, add Hindi or English meaning, and download a clean image for Reels, Stories and posts.">
+<meta name="theme-color" content="#0a0a12">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="./"><span class="logo">ॐ</span><span>Shloka Card Maker</span></a>
+  <div class="hd-actions"><button class="iconbtn" id="themeBtn" type="button" aria-label="Switch dark or light mode">☀️ Light</button></div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="badge">✨ Free · No login · Works offline</span>
+    <h1>Gita shloka ko banao <em>share-worthy</em> card.</h1>
+    <p>700 shlokas, Hindi and English meaning, 8 looks. Make an image for Reels, Stories or WhatsApp in under a minute.</p>
+  </section>
+
+  <div class="layout">
+    <section class="preview card" aria-label="Card preview">
+      <div class="canvaswrap" id="canvaswrap"><canvas id="cv" width="1080" height="1080" role="img" aria-label="Shloka card preview"></canvas></div>
+      <div class="row actions">
+        <button class="btn" id="dl" type="button">⬇ Download</button>
+        <button class="btn ghost" id="share" type="button">↗ Share</button>
+        <button class="btn ghost" id="copycap" type="button">📋 Caption</button>
+      </div>
+      <p class="muted small" id="note"></p>
+    </section>
+
+    <section class="controls">
+      <div class="card">
+        <div class="tabs" role="tablist" aria-label="Card source">
+          <button role="tab" id="tabVerse" aria-selected="true" type="button">Gita shloka</button>
+          <button role="tab" id="tabCustom" aria-selected="false" type="button">My own text</button>
+        </div>
+
+        <div id="paneVerse">
+          <label class="lb" for="q">Search (2.47, karma, शांति, peace)</label>
+          <input type="search" id="q" placeholder="Search shloka, meaning or number" autocomplete="off" maxlength="80">
+          <div class="row pick">
+            <div><label class="lb" for="chsel">Adhyay</label><select id="chsel"></select></div>
+            <div><label class="lb" for="vsel">Shloka</label><select id="vsel"></select></div>
+            <div class="grow"><label class="lb">&nbsp;</label><button class="btn ghost sm" id="rand" type="button">🎲 Random</button> <button class="btn ghost sm" id="today" type="button">📅 Aaj ka shloka</button></div>
+          </div>
+          <div id="results" class="results" hidden></div>
+          <label class="lb">Popular by theme</label>
+          <div class="chips" id="themes"></div>
+          <div class="chips pop" id="popular"></div>
+        </div>
+
+        <div id="paneCustom" hidden>
+          <label class="lb" for="ctext">Main line (Sanskrit/Hindi/English)</label>
+          <textarea id="ctext" rows="3" maxlength="400" placeholder="Apni line likho..."></textarea>
+          <label class="lb" for="cref">Title / source (optional)</label>
+          <input type="text" id="cref" maxlength="60" placeholder="e.g. Motivation, Gita Saar">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Card content</h2>
+        <div class="grid2">
+          <label class="sw"><input type="checkbox" id="oSa" checked> Sanskrit shloka</label>
+          <label class="sw"><input type="checkbox" id="oTr"> Transliteration</label>
+          <label class="sw"><input type="checkbox" id="oRef" checked> Adhyay · Shloka no.</label>
+          <label class="sw"><input type="checkbox" id="oOm" checked> ॐ symbol</label>
+        </div>
+        <label class="lb" for="mean">Meaning</label>
+        <select id="meankind">
+          <option value="sh">Short Hindi (simple)</option>
+          <option value="se">Short English (simple)</option>
+          <option value="hi">Full Hindi (Swami Ramsukhdas)</option>
+          <option value="en">Full English (Swami Sivananda)</option>
+          <option value="none">No meaning</option>
+        </select>
+        <textarea id="mean" rows="3" maxlength="500" aria-label="Meaning text, you can edit it"></textarea>
+        <p class="muted small" id="meanhint">You can edit the meaning text above.</p>
+        <label class="lb" for="mark">Your handle / name (bottom)</label>
+        <input type="text" id="mark" maxlength="40" placeholder="@yourhandle">
+      </div>
+
+      <div class="card">
+        <h2>Look</h2>
+        <label class="lb">Theme</label>
+        <div class="swatches" id="swatches" role="radiogroup" aria-label="Card theme"></div>
+        <div class="grid2">
+          <div><label class="lb" for="size">Size</label>
+            <select id="size"><option value="sq">Post 1080×1080</option><option value="pt">Portrait 1080×1350</option><option value="st">Story/Reel 1080×1920</option></select></div>
+          <div><label class="lb" for="font">Shloka font</label>
+            <select id="font"><option value="tiro">Classic (Tiro)</option><option value="noto">Bold (Noto Serif)</option><option value="hind">Clean (Hind)</option></select></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="card tips">
+    <h2>How to use</h2>
+    <ol class="muted">
+      <li>Pick a shloka (search, or choose Adhyay and Shloka number).</li>
+      <li>Choose meaning style, edit the text if you want, pick a theme and size.</li>
+      <li>Tap <b>Download image</b>. Post it, or use <b>Share</b> on phone to send it straight to Instagram or WhatsApp.</li>
+    </ol>
+    <p class="muted small">Sanskrit text and chapter data: <a href="https://github.com/gita/gita" rel="noopener noreferrer" target="_blank">gita/gita</a> (public domain dataset). Hindi meaning: Swami Ramsukhdas. English meaning: Swami Sivananda. Short meanings are written for this app as a quick gist, so use the full meaning when you need exact wording. Verify before publishing anywhere formal.</p>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap"><span>Everything runs in your browser. Nothing is uploaded.</span><span>Built by Akash Vishwakarma</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
