@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Gita Shloka Card Maker - make shareable shloka images</title>
 <meta name="description" content="Free Gita Shloka Card Maker. Pick any of the 700 Bhagavad Gita shlokas, add Hindi or English meaning, and download a clean image for Reels, Stories and posts.">
-<meta name="theme-color" content="#0a0a12">
+<meta name="theme-color" content="#0f0c07">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
@@ -24,8 +24,8 @@
 <main class="wrap">
   <section class="hero">
     <span class="badge">✨ Free · No login · Works offline</span>
-    <h1>Gita shloka ko banao <em>share-worthy</em> card.</h1>
-    <p>700 shlokas, Hindi and English meaning, 8 looks. Make an image for Reels, Stories or WhatsApp in under a minute.</p>
+    <h1>Turn any Gita verse into a <em>share-worthy</em> card.</h1>
+    <p>All 700 shlokas with Hindi and English meanings and 8 hand-crafted looks. Make an image for Reels, Stories or WhatsApp in under a minute.</p>
   </section>
 
   <div class="layout">
@@ -50,9 +50,9 @@
           <label class="lb" for="q">Search (2.47, karma, शांति, peace)</label>
           <input type="search" id="q" placeholder="Search shloka, meaning or number" autocomplete="off" maxlength="80">
           <div class="row pick">
-            <div><label class="lb" for="chsel">Adhyay</label><select id="chsel"></select></div>
-            <div><label class="lb" for="vsel">Shloka</label><select id="vsel"></select></div>
-            <div class="grow"><label class="lb">&nbsp;</label><button class="btn ghost sm" id="rand" type="button">🎲 Random</button> <button class="btn ghost sm" id="today" type="button">📅 Aaj ka shloka</button></div>
+            <div><label class="lb" for="chsel">Chapter</label><select id="chsel"></select></div>
+            <div><label class="lb" for="vsel">Verse</label><select id="vsel"></select></div>
+            <div class="grow"><label class="lb">&nbsp;</label><button class="btn ghost sm" id="rand" type="button">🎲 Random</button> <button class="btn ghost sm" id="today" type="button">📅 Today's verse</button></div>
           </div>
           <div id="results" class="results" hidden></div>
           <label class="lb">Popular by theme</label>
@@ -61,8 +61,8 @@
         </div>
 
         <div id="paneCustom" hidden>
-          <label class="lb" for="ctext">Main line (Sanskrit/Hindi/English)</label>
-          <textarea id="ctext" rows="3" maxlength="400" placeholder="Apni line likho..."></textarea>
+          <label class="lb" for="ctext">Main line (Sanskrit, Hindi or English)</label>
+          <textarea id="ctext" rows="3" maxlength="400" placeholder="Write your own line..."></textarea>
           <label class="lb" for="cref">Title / source (optional)</label>
           <input type="text" id="cref" maxlength="60" placeholder="e.g. Motivation, Gita Saar">
         </div>
@@ -73,7 +73,7 @@
         <div class="grid2">
           <label class="sw"><input type="checkbox" id="oSa" checked> Sanskrit shloka</label>
           <label class="sw"><input type="checkbox" id="oTr"> Transliteration</label>
-          <label class="sw"><input type="checkbox" id="oRef" checked> Adhyay · Shloka no.</label>
+          <label class="sw"><input type="checkbox" id="oRef" checked> Chapter · Verse no.</label>
           <label class="sw"><input type="checkbox" id="oOm" checked> ॐ symbol</label>
         </div>
         <label class="lb" for="mean">Meaning</label>
@@ -107,7 +107,7 @@
   <section class="card tips">
     <h2>How to use</h2>
     <ol class="muted">
-      <li>Pick a shloka (search, or choose Adhyay and Shloka number).</li>
+      <li>Pick a verse (search, or choose a chapter and verse number).</li>
       <li>Choose meaning style, edit the text if you want, pick a theme and size.</li>
       <li>Tap <b>Download image</b>. Post it, or use <b>Share</b> on phone to send it straight to Instagram or WhatsApp.</li>
     </ol>

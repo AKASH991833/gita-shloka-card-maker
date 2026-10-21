@@ -1,5 +1,8 @@
 # Gita Shloka Card Maker
 
+
+**Live:** https://akash991833.github.io/gita-shloka-card-maker/
+
 Make clean, shareable image cards from any of the 700 Bhagavad Gita shlokas, with Hindi or English meaning. Built for Reels, Stories and WhatsApp. Free, no login.
 
 ## Screenshots

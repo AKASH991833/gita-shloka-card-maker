@@ -42,7 +42,7 @@ function build(c,W,H,sc){
     if(S.oSa){var vl=verseLines(v),fs=Math.round(60*fo.k*sc*big),fit=false;for(var q=1;q>=.78;q-=.04){var f2=Math.round(60*fo.k*sc*big*q);c.font=fo.w+' '+f2+'px '+fo.f;if(vl.every(function(l){return c.measureText(l).width<=maxW})){fs=f2;fit=true;break}}if(!fit)fs=Math.round(60*fo.k*sc*big*.92);c.font=fo.w+' '+fs+'px '+fo.f;var ls=[];vl.forEach(function(l){wrap(c,l,maxW).forEach(function(x){ls.push(x)})});add('sa',c.font,fs,fo.lh,th.ink,ls,Math.round(34*sc))}
     if(S.oTr){var ts=Math.round(27*sc*big);c.font='500 '+ts+'px '+BODY;var tl=[];v.tr.forEach(function(l){wrap(c,l,maxW).forEach(function(x){tl.push(x)})});add('tr',c.font,ts,1.5,th.sub,tl,Math.round(30*sc))}
   }else{
-    var cs=Math.round(62*fo.k*sc*big);c.font=fo.w+' '+cs+'px '+fo.f;var cl=[];(S.custom||'Apni line yahan likho').split('\n').forEach(function(l){wrap(c,l,maxW).forEach(function(x){cl.push(x)})});add('sa',c.font,cs,fo.lh,th.ink,cl,Math.round(34*sc))}
+    var cs=Math.round(62*fo.k*sc*big);c.font=fo.w+' '+cs+'px '+fo.f;var cl=[];(S.custom||'Write your own line here').split('\n').forEach(function(l){wrap(c,l,maxW).forEach(function(x){cl.push(x)})});add('sa',c.font,cs,fo.lh,th.ink,cl,Math.round(34*sc))}
   var m=S.mean.trim();
   if(m&&S.kind!=='none'||S.mode==='custom'&&m){var ms=Math.round(34*sc*big);c.font='500 '+ms+'px '+BODY;var ml=wrap(c,m,maxW-40);add('mean',c.font,ms,1.55,th.sub,ml,0)}
   return blocks}
